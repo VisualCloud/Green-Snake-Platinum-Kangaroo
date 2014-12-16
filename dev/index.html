@@ -3,87 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <title>Green Snake Platinum Kangaroo</title>
- 
   <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  
 </head>
+
 <body>
   <span class="currentSong"></span>
   <div id="carousel-example-generic" class="carousel slide" data-interval="false">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-  <!-- <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
-  <li data-target="#carousel-example-generic" data-slide-to="1"></li> -->
-  <!-- <li data-target="#carousel-example-generic" data-slide-to="2"></li> -->
-  </ol>
+    <!-- Indicators -->
+    <ol class="carousel-indicators"></ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <div id="container1"></div>
-      <div class="carousel-caption">
+    <!-- Wrapper for Bootstrap carousel slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <div id="container1"></div>
+        <div class="carousel-caption">
+        </div>
+      </div>
+      <div class="item">
+        <div id="container2"></div>
+        <div class="carousel-caption">
+        </div>
+      </div>
+      <div class="item">
+        <div id="container3"></div>
+        <div class="carousel-caption">
+        </div>
       </div>
     </div>
-    <div class="item">
-      <div id="container2"></div>
-      <div class="carousel-caption">
-      </div>
-    </div>
-    <div class="item">
-      <div id="container3"></div>
-      <div class="carousel-caption">
-      </div>
-    </div> 
 
-  </div> <!--carousel-inner-->
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-  <span class="icon-prev"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-  <span class="icon-next"></span>
-  </a>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+      <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+      <span class="icon-next"></span>
+    </a>
   </div>
 
-
-<!-- ===========Dave======== -->
-  <div id="containerControls">   
-      <div class="content"> 
-       <audio controls volume="0.3" id="audio" style="visibility:hidden;"></audio>
-
-        <!-- <div class="audio">
-        <audio controls volume="0.25" id="audio"></audio>
-          <label for="check">Load Remote Source: </label><input id="box" name="check" type="checkbox"> 
-          <label for="loop"> Loop Track: </label><input id="loop" name="loop" type="checkbox">
-          <div id="loader" class="hidden">
-            <input id="link" type="text" placeholder="http://source.site/soundfile">
-            <button id="load">Load</button>
-          </div>
-        </div> -->
-
-
-
-<menu class="medium">
- <button class="rw"></button>
-  <button class="play"></button>
-  <!--<button class="pause"></button>-->
-  <button class="stop"></button>
-  <button class="ff"></button>
-</menu>
-      </div>  
+  <div id="containerControls">
+    <div class="content">
+      <audio controls volume="0.3" id="audio" style="visibility:hidden;"></audio>
+      <menu class="medium">
+        <button class="rw"></button>
+        <button class="play"></button>
+        <button class="stop"></button>
+        <button class="ff"></button>
+      </menu>
+    </div>  
       <div class="transparency bufferControls"  style="top:20px; position:relative;"> 
         <div>
-          <!-- <button id="bufferStop">Stop</button>
-          <button id="bufferRestart">Restart</button>
-          <button id="bufferNextSong">Next Song</button>
-          <button id="bufferPrevSong">Prev Song</button> -->
         </div>
-        
         <div style="float:left;">
         <label for="fader">Volume</label>
         </div>
@@ -93,7 +65,6 @@
         <div style="float:left;">
         <output for="fader" id="volume" style="background:black; color:white; font-family:Avenir,Helvetica,Neue,Arial,sans-serif;">30%</output>
         </div>
-        
         <div style="position:relative; clear:both; margin-bottom:20px">
         <label for="check">Load Remote Source: </label><input id="box" name="check" type="checkbox"> 
         <label for="loop"> Loop Track: </label><input id="loop" name="loop" type="checkbox">
@@ -102,20 +73,12 @@
           <button id="load">Load</button>
         </div>
         </div>
-
         <div class="playlist"  style="position:absolute;">
           <div id="prompt"></div>
           <p>Playlist</p>
-        </div>          
+        </div>
       </div> 
-
   </div>
-
-
-
-<!-- ============Dave============= -->
-  <!--******************************************************-->
-
 
   <script type="x-shader/x-vertex" id="vertexshader">
     attribute float size;
@@ -139,12 +102,14 @@
     }
   </script>
 
+<!-- Used in visualizer3.js -->
   <script id="vertexShader" type="x-shader/x-vertex">
     void main() {
       gl_Position = vec4( position, 1.0 );
     }
   </script>
 
+<!-- Used in visualizer3.js -->
   <script id="fragmentShader" type="x-shader/x-fragment">
     uniform vec2 resolution;
     uniform float time;
@@ -175,7 +140,6 @@
     }
   </script>
 
-
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/threejs/build/three.min.js"></script>
   <script src="js/audio.js"></script>
@@ -187,111 +151,73 @@
   <script src="js/Sparks.js"></script>
   <script src="js/CanvasRenderer.js"></script> 
 
-  <!--<script src="js/visualizer2.js"></script> -->
-  <!-- <script src="js/visualizer1.js" id="visScript"></script> -->
-  
-  <!--<script src="js/visualizer3.js"></script> -->
-  <!--<script src="js/visualizer4.js"></script>-->
-<!---
-  <script>
-
-  $(function(){
-
-
-    $('.right').on('click', function(){
-      var str = $('#visScript').attr("src");
-      var num = str.charAt(13);
-      var newStr =  'js/visualizer' + ( Math.min(parseInt(3) + 1, 3 ))+ '.js';
-      console.log(newStr);
-
-      $('#visScript').attr("src", newStr);
-
-    });
-
-    $('.left').on('click', function(){
-      var str = $('#visScript').attr("src");
-      var num = str.charAt(13);
-      var newStr =  'js/visualizer' + ( Math.max(parseInt(num) - 3, 1 ))+ '.js';
-      console.log(newStr);
-
-      $('#visScript').attr("src", newStr);
-
-    });
-
-  });
-
-  </script>
-
-  -->
-
+<!-- When doc is ready, appends appropriate visualizers (visualizer1.js, visualizer2.js, visualizer3.js) to body-->
 <script>
-  var vis1IsOn = true, vis2IsOn = false, vis3IsOn = false;
+//These booleans determine which visualizer can render. Leaves only one with a truthy value at any time 
+//to prevent multiple visualizers from rendering simultaneously.  
+var vis1IsOn = true, vis2IsOn = false, vis3IsOn = false;
 
+//Initial anon function creates a script tag with visualizer1.js as the default upon page loading
 $(function() {
-var counter = 0;
-var arr = ['js/visualizer1.js','js/visualizer2.js', 'js/visualizer3.js'];
-var script = document.createElement('script');
-script.setAttribute('type', 'text/javascript');
-script.setAttribute('src', arr[counter]);
-script.setAttribute('id', counter);
-script.setAttribute('class', 'classify');
-$('body').append(script);
-console.log('script', script);
+  var counter = 0;
+  var arr = ['js/visualizer1.js','js/visualizer2.js', 'js/visualizer3.js'];
+  var script = document.createElement('script');
+  script.setAttribute('type', 'text/javascript');
+  script.setAttribute('src', arr[counter]);
+  script.setAttribute('id', counter);
+  script.setAttribute('class', 'classify');
+  $('body').append(script);
 
-
+//On right click, create new script tag with correct source. Uses arr indices. 
 $('.right').on('click', function(){
-//var oldStr = $('#'+counter ).attr("src");
-//var num = oldStr.charAt(13);
-//var newStr = 'js/visualizer' + ( Math.min(parseInt(num) + 1, 3 ))+ '.js';
-// console.log('old', oldStr);
-// console.log('new', newStr);
-if(counter < 3){
-counter++;
- }else{
-  counter = 0;
- }
 
-var script = document.createElement('script');
-script.setAttribute('type', 'text/javascript');
-script.setAttribute('src', arr[counter]);
-script.setAttribute('id', counter + 1);
-script.setAttribute('class', 'classify');
-$('.classify').remove();
-$('#container1').empty();
-$('#container2').empty();
-$('#container3').empty();
-console.log('script', script);
-if(counter === 0){
-  vis1IsOn = true;
-  vis2IsOn = false;
-  vis3IsOn = false;
-}
-if(counter === 1){
-  vis1IsOn = false;
-  vis2IsOn = true;
-  vis3IsOn = false;
-}
-if(counter === 2){
-  vis1IsOn = false;
-  vis2IsOn = false;
-  vis3IsOn = true;
-}
+//conditional keeps arr indices within the correct values. 
+//prevents something like arr[3] or arr[-1]
+  if(counter < 2){
+  counter++;
+   } else {
+    counter = 0;
+  }
+
+//create new script tag, append to body
+  var script = document.createElement('script');
+  script.setAttribute('type', 'text/javascript');
+  script.setAttribute('src', arr[counter]);
+  script.setAttribute('id', counter + 1);
+  script.setAttribute('class', 'classify');
+  $('.classify').remove();
+  $('#container1').empty();
+  $('#container2').empty();
+  $('#container3').empty();
+
+//Manages booleans defined on line 232
+  if(counter === 0){
+    vis1IsOn = true;
+    vis2IsOn = false;
+    vis3IsOn = false;
+  }
+  if(counter === 1){
+    vis1IsOn = false;
+    vis2IsOn = true;
+    vis3IsOn = false;
+  }
+  if(counter === 2){
+    vis1IsOn = false;
+    vis2IsOn = false;
+    vis3IsOn = true;
+  }
 $('body').append(script);
   });
 
 
 
-
+//similar to right-click handler. See above for insight on what's happening inside
     $('.left').on('click', function(){
-    //var oldStr = $('#'+counter ).attr("src");
-    //var num = oldStr.charAt(13);
-    //var newStr = 'js/visualizer' + ( Math.min(parseInt(num) + 1, 3 ))+ '.js';
-    // console.log('old', oldStr);
-    // console.log('new', newStr);
+
     if(counter > 0){
       counter--;
     }else{
-      counter = 3;
+      counter = 2;
     }
 
     var script = document.createElement('script');
@@ -303,26 +229,25 @@ $('body').append(script);
     $('#container1').empty();
     $('#container2').empty();
     $('#container3').empty();
-      console.log('script', script);
-if(counter === 0){
-  vis1IsOn = true;
-  vis2IsOn = false;
-  vis3IsOn = false;
-}
-if(counter === 1){
-  vis1IsOn = false;
-  vis2IsOn = true;
-  vis3IsOn = false;
-}
-if(counter === 2){
-  vis1IsOn = false;
-  vis2IsOn = false;
-  vis3IsOn = true;
-}
+
+    if(counter === 0){
+      vis1IsOn = true;
+      vis2IsOn = false;
+      vis3IsOn = false;
+    }
+    if(counter === 1){
+      vis1IsOn = false;
+      vis2IsOn = true;
+      vis3IsOn = false;
+    }
+    if(counter === 2){
+      vis1IsOn = false;
+      vis2IsOn = false;
+      vis3IsOn = true;
+    }
     $('body').append(script);
     });
 });
-
 
   </script>
   
