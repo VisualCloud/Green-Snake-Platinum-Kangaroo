@@ -1,15 +1,17 @@
 {
   "name": "Green-Snake-Platinum-Kangaroo",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A sound visualizer in Web Audio API and WebGL",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/unit",
-    "start": "node index.js"
+    "start": "node index.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
+}
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/victorleungtw/Green-Snake-Platinum-Kangaroo.git"
+    "url": "https://github.com/VisualCloud/Green-Snake-Platinum-Kangaroo.git"
   },
   "keywords": [
     "music",
@@ -17,19 +19,20 @@
     "visualizer",
     "threejs"
   ],
-  "author": "Nic Mitchell, Pactrick McPike, Victor Leung",
+  "author": "Dave Mun, Essam Joubori, Phil Elauria",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/victorleungtw/Green-Snake-Platinum-Kangaroo/issues"
+    "url": "https://github.com/VisualCloud/Green-Snake-Platinum-Kangaroo/issues"
   },
-  "homepage": "https://github.com/victorleungtw/Green-Snake-Platinum-Kangaroo",
+  "homepage": "https://github.com/VisualCloud/Green-Snake-Platinum-Kangaroo",
   "dependencies": {
     "casperjs": "^1.1.0-beta3",
     "express": "^4.10.4",
     "mocha": "^2.0.1",
     "morgan": "^1.5.0",
     "nodeunit": "^0.9.0",
-    "supertest": "^0.15.0"
+    "supertest": "^0.15.0",
+    "bower": "0.6.x"
   },
   "engines": {
     "node": "0.10.x"
